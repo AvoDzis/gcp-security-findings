@@ -1,0 +1,103 @@
+[
+  {
+    "notificationConfigName": "organizations/100000000001/locations/global/notificationConfigs/scc-findings-to-bigquery",
+    "finding": {
+      "name": "organizations/100000000001/sources/500000000001/locations/global/findings/f0000000000000000000000000000001",
+      "canonicalName": "projects/300000000101/sources/500000000001/locations/global/findings/f0000000000000000000000000000001",
+      "parent": "organizations/100000000001/sources/500000000001/locations/global",
+      "parentDisplayName": "Security Health Analytics",
+      "resourceName": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/4000000000000000001",
+      "state": "ACTIVE",
+      "category": "OPEN_SSH_PORT",
+      "severity": "HIGH",
+      "mute": "UNMUTED",
+      "findingClass": "MISCONFIGURATION",
+      "eventTime": "2026-10-01T07:12:09.441Z",
+      "createTime": "2026-10-01T07:12:10.002Z",
+      "description": "Firewall rules that allow any IP address to connect to SSH port might expose your SSH services to attackers.",
+      "nextSteps": "Restrict the source ranges of the firewall rule or delete it.",
+      "externalUri": "https://console.cloud.google.com/networking/firewalls/details/allow-ssh-anywhere?project=acme-dev-web-3f9c",
+      "sourceProperties": {
+        "ReactivationCount": 0,
+        "ExceptionInstructions": "Add the security mark \"allow_open_ssh_port\" to the asset with a value of \"true\" to prevent this finding from being activated again."
+      }
+    },
+    "resource": {
+      "name": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/4000000000000000001",
+      "displayName": "allow-ssh-anywhere",
+      "type": "google.compute.Firewall",
+      "project": "//cloudresourcemanager.googleapis.com/projects/300000000101",
+      "projectDisplayName": "acme-dev-web-3f9c",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000101",
+      "parentDisplayName": "acme-dev-web-3f9c",
+      "folders": [
+        {
+          "resourceFolder": "//cloudresourcemanager.googleapis.com/folders/200000000010",
+          "resourceFolderDisplayName": "dev"
+        }
+      ]
+    }
+  },
+  {
+    "notificationConfigName": "organizations/100000000001/locations/global/notificationConfigs/scc-findings-to-bigquery",
+    "finding": {
+      "name": "organizations/100000000001/sources/500000000001/locations/global/findings/f0000000000000000000000000000001",
+      "canonicalName": "projects/300000000101/sources/500000000001/locations/global/findings/f0000000000000000000000000000001",
+      "parent": "organizations/100000000001/sources/500000000001/locations/global",
+      "parentDisplayName": "Security Health Analytics",
+      "resourceName": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/4000000000000000001",
+      "state": "INACTIVE",
+      "category": "OPEN_SSH_PORT",
+      "severity": "HIGH",
+      "mute": "UNMUTED",
+      "findingClass": "MISCONFIGURATION",
+      "eventTime": "2026-10-02T15:40:51.118Z",
+      "createTime": "2026-10-01T07:12:10.002Z"
+    },
+    "resource": {
+      "name": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/4000000000000000001",
+      "displayName": "allow-ssh-anywhere",
+      "type": "google.compute.Firewall",
+      "project": "//cloudresourcemanager.googleapis.com/projects/300000000101",
+      "projectDisplayName": "acme-dev-web-3f9c",
+      "folders": [
+        {
+          "resourceFolder": "//cloudresourcemanager.googleapis.com/folders/200000000010",
+          "resourceFolderDisplayName": "dev"
+        }
+      ]
+    }
+  },
+  {
+    "notificationConfigName": "organizations/100000000001/locations/global/notificationConfigs/scc-findings-to-bigquery",
+    "finding": {
+      "name": "organizations/100000000001/sources/500000000001/locations/global/findings/f0000000000000000000000000000002",
+      "canonicalName": "projects/300000000102/sources/500000000001/locations/global/findings/f0000000000000000000000000000002",
+      "parent": "organizations/100000000001/sources/500000000001/locations/global",
+      "parentDisplayName": "Security Health Analytics",
+      "resourceName": "//iam.googleapis.com/projects/acme-prod-data-7a21/serviceAccounts/110000000000000000001",
+      "state": "ACTIVE",
+      "category": "USER_MANAGED_SERVICE_ACCOUNT_KEY",
+      "severity": "MEDIUM",
+      "mute": "UNMUTED",
+      "findingClass": "MISCONFIGURATION",
+      "eventTime": "2026-10-03T02:00:14.870Z",
+      "createTime": "2025-06-02T02:00:31.205Z",
+      "description": "A user manages a service account key.",
+      "externalUri": "https://console.cloud.google.com/iam-admin/serviceaccounts?project=acme-prod-data-7a21"
+    },
+    "resource": {
+      "name": "//iam.googleapis.com/projects/acme-prod-data-7a21/serviceAccounts/110000000000000000001",
+      "displayName": "ci-deployer@acme-prod-data-7a21.iam.gserviceaccount.com",
+      "type": "google.iam.ServiceAccount",
+      "project": "//cloudresourcemanager.googleapis.com/projects/300000000102",
+      "projectDisplayName": "acme-prod-data-7a21",
+      "folders": [
+        {
+          "resourceFolder": "//cloudresourcemanager.googleapis.com/folders/200000000020",
+          "resourceFolderDisplayName": "prod"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "~1.14"
+      - uses: terraform-linters/setup-tflint@v4
+      - name: fmt
+        run: terraform fmt -check -recursive terraform
+      - name: module validate + test (mocked provider, no cloud calls)
+        working-directory: terraform/modules/scc-findings-export
+        run: |
+          terraform init -input=false
+          terraform validate
+          terraform test
+      - name: example validate
+        working-directory: terraform/examples/org-level
+        run: |
+          terraform init -input=false -backend=false
+          terraform validate
+      - name: tflint
+        run: tflint --recursive --config "$GITHUB_WORKSPACE/.tflint.hcl"
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e '.[dev]'
+      - run: pytest

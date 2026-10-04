@@ -7,12 +7,21 @@
 *.tfplan
 crash.log
 .terragrunt-cache/
+# Reusable modules are not pinned by a lock file; example roots are.
+terraform/modules/**/.terraform.lock.hcl
 
 # Python
 .venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+*.egg-info/
+
+# quick-audit output describes real infrastructure: keep it out of git
+/findings*.csv
+
+# Claude Code worktrees
+.claude/
 
 # Secrets and local env
 .env
