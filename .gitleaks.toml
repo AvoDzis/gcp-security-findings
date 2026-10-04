@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+# The IAM API returns "keyAlgorithm": "KEY_ALG_RSA_2048" for every service account key. It is an
+# enum value, not a secret, but generic-api-key matches it. Allowed only in the test fixtures.
+[[allowlists]]
+description = "IAM key algorithm enum in fictional gcloud/CAI fixtures"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "match"
+regexes = ['''keyAlgorithm"\s*:\s*"KEY_ALG_RSA_\d+"''']
+paths = ['''^tests/fixtures/''']

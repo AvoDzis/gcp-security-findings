@@ -1,0 +1,74 @@
+[
+  {
+    "kind": "compute#firewall",
+    "id": "4000000000000000008",
+    "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+    "name": "sandbox-allow-all",
+    "description": "",
+    "network": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/networks/sandbox-vpc",
+    "priority": 1000,
+    "direction": "INGRESS",
+    "logConfig": {
+      "enable": false
+    },
+    "disabled": false,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/firewalls/sandbox-allow-all",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ],
+    "allowed": [
+      {
+        "IPProtocol": "all"
+      }
+    ]
+  },
+  {
+    "kind": "compute#firewall",
+    "id": "4000000000000000009",
+    "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+    "name": "allow-egress-all",
+    "description": "",
+    "network": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/networks/sandbox-vpc",
+    "priority": 1000,
+    "direction": "EGRESS",
+    "logConfig": {
+      "enable": false
+    },
+    "disabled": false,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/firewalls/allow-egress-all",
+    "destinationRanges": [
+      "0.0.0.0/0"
+    ],
+    "allowed": [
+      {
+        "IPProtocol": "all"
+      }
+    ]
+  },
+  {
+    "kind": "compute#firewall",
+    "id": "4000000000000000010",
+    "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+    "name": "allow-rdp-udp",
+    "description": "",
+    "network": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/networks/sandbox-vpc",
+    "priority": 1000,
+    "direction": "INGRESS",
+    "logConfig": {
+      "enable": false
+    },
+    "disabled": false,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/firewalls/allow-rdp-udp",
+    "sourceRanges": [
+      "0.0.0.0/0"
+    ],
+    "allowed": [
+      {
+        "IPProtocol": "udp",
+        "ports": [
+          "3389"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "subscription_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Pub/Sub subscription that wrote the row."
+  },
+  {
+    "name": "message_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Pub/Sub message ID. Redeliveries can repeat it."
+  },
+  {
+    "name": "publish_time",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "description": "When SCC published the notification. Partitioning column."
+  },
+  {
+    "name": "attributes",
+    "type": "JSON",
+    "mode": "NULLABLE",
+    "description": "Pub/Sub message attributes."
+  },
+  {
+    "name": "data",
+    "type": "JSON",
+    "mode": "NULLABLE",
+    "description": "SCC NotificationMessage: notificationConfigName, finding, resource."
+  }
+]

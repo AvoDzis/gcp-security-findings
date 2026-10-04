@@ -1,0 +1,534 @@
+[
+  {
+    "name": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/allow-ssh-anywhere",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000101",
+      "data": {
+        "id": "4000000000000000001",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-ssh-anywhere",
+        "description": "temporary debug access",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-dev-web-3f9c/global/networks/default",
+        "priority": 1000,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-dev-web-3f9c/global/firewalls/allow-ssh-anywhere",
+        "sourceRanges": [
+          "0.0.0.0/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "22"
+            ]
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000101",
+      "folders/200000000010",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/allow-ssh-rdp-iap",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000101",
+      "data": {
+        "id": "4000000000000000002",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-ssh-rdp-iap",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-dev-web-3f9c/global/networks/default",
+        "priority": 1000,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-dev-web-3f9c/global/firewalls/allow-ssh-rdp-iap",
+        "sourceRanges": [
+          "35.235.240.0/20"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "22",
+              "3389"
+            ]
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000101",
+      "folders/200000000010",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-dev-web-3f9c/global/firewalls/allow-internal",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000101",
+      "data": {
+        "id": "4000000000000000003",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-internal",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-dev-web-3f9c/global/networks/default",
+        "priority": 65534,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-dev-web-3f9c/global/firewalls/allow-internal",
+        "sourceRanges": [
+          "10.128.0.0/9"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "0-65535"
+            ]
+          },
+          {
+            "IPProtocol": "udp",
+            "ports": [
+              "0-65535"
+            ]
+          },
+          {
+            "IPProtocol": "icmp"
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000101",
+      "folders/200000000010",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-prod-data-7a21/global/firewalls/allow-rdp-bastion",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000102",
+      "data": {
+        "id": "4000000000000000004",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-rdp-bastion",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/networks/prod-vpc",
+        "priority": 900,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/firewalls/allow-rdp-bastion",
+        "sourceRanges": [
+          "0.0.0.0/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "3389"
+            ]
+          }
+        ],
+        "targetTags": [
+          "rdp-bastion"
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000102",
+      "folders/200000000020",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-prod-data-7a21/global/firewalls/allow-admin-v6",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000102",
+      "data": {
+        "id": "4000000000000000005",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-admin-v6",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/networks/prod-vpc",
+        "priority": 1000,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/firewalls/allow-admin-v6",
+        "sourceRanges": [
+          "::/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "20-30",
+              "443"
+            ]
+          }
+        ],
+        "targetServiceAccounts": [
+          "admin-vm@acme-prod-data-7a21.iam.gserviceaccount.com"
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000102",
+      "folders/200000000020",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-prod-data-7a21/global/firewalls/legacy-ssh-disabled",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000102",
+      "data": {
+        "id": "4000000000000000006",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "legacy-ssh-disabled",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/networks/prod-vpc",
+        "priority": 1000,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": true,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/firewalls/legacy-ssh-disabled",
+        "sourceRanges": [
+          "0.0.0.0/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "22"
+            ]
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000102",
+      "folders/200000000020",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-prod-data-7a21/global/firewalls/deny-ssh-world",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000102",
+      "data": {
+        "id": "4000000000000000007",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "deny-ssh-world",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/networks/prod-vpc",
+        "priority": 100,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-prod-data-7a21/global/firewalls/deny-ssh-world",
+        "sourceRanges": [
+          "0.0.0.0/0"
+        ],
+        "denied": [
+          {
+            "IPProtocol": "tcp",
+            "ports": [
+              "22"
+            ]
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000102",
+      "folders/200000000020",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-sandbox-lab-b04e/global/firewalls/sandbox-allow-all",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000103",
+      "data": {
+        "id": "4000000000000000008",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "sandbox-allow-all",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/networks/sandbox-vpc",
+        "priority": 1000,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/firewalls/sandbox-allow-all",
+        "sourceRanges": [
+          "0.0.0.0/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "all"
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000103",
+      "folders/200000000030",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-sandbox-lab-b04e/global/firewalls/allow-egress-all",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000103",
+      "data": {
+        "id": "4000000000000000009",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-egress-all",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/networks/sandbox-vpc",
+        "priority": 1000,
+        "direction": "EGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/firewalls/allow-egress-all",
+        "destinationRanges": [
+          "0.0.0.0/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "all"
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000103",
+      "folders/200000000030",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//compute.googleapis.com/projects/acme-sandbox-lab-b04e/global/firewalls/allow-rdp-udp",
+    "assetType": "compute.googleapis.com/Firewall",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest",
+      "discoveryName": "Firewall",
+      "parent": "//cloudresourcemanager.googleapis.com/projects/300000000103",
+      "data": {
+        "id": "4000000000000000010",
+        "creationTimestamp": "2025-03-02T08:15:00.000-08:00",
+        "name": "allow-rdp-udp",
+        "description": "",
+        "network": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/networks/sandbox-vpc",
+        "priority": 1000,
+        "direction": "INGRESS",
+        "logConfig": {
+          "enable": false
+        },
+        "disabled": false,
+        "selfLink": "https://www.googleapis.com/compute/v1/projects/acme-sandbox-lab-b04e/global/firewalls/allow-rdp-udp",
+        "sourceRanges": [
+          "0.0.0.0/0"
+        ],
+        "allowed": [
+          {
+            "IPProtocol": "udp",
+            "ports": [
+              "3389"
+            ]
+          }
+        ]
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000103",
+      "folders/200000000030",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//iam.googleapis.com/projects/acme-dev-web-3f9c/serviceAccounts/110000000000000000003/keys/1000000000000000000000000000000000000003",
+    "assetType": "iam.googleapis.com/ServiceAccountKey",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://iam.googleapis.com/$discovery/rest",
+      "discoveryName": "ServiceAccountKey",
+      "parent": "//iam.googleapis.com/projects/acme-dev-web-3f9c/serviceAccounts/110000000000000000003",
+      "data": {
+        "keyAlgorithm": "KEY_ALG_RSA_2048",
+        "keyOrigin": "GOOGLE_PROVIDED",
+        "keyType": "USER_MANAGED",
+        "name": "projects/acme-dev-web-3f9c/serviceAccounts/app-runtime@acme-dev-web-3f9c.iam.gserviceaccount.com/keys/1000000000000000000000000000000000000003",
+        "validAfterTime": "2026-09-01T10:00:00Z",
+        "validBeforeTime": "2026-12-30T10:00:00Z"
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000101",
+      "folders/200000000010",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//iam.googleapis.com/projects/acme-prod-data-7a21/serviceAccounts/110000000000000000001/keys/1000000000000000000000000000000000000001",
+    "assetType": "iam.googleapis.com/ServiceAccountKey",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://iam.googleapis.com/$discovery/rest",
+      "discoveryName": "ServiceAccountKey",
+      "parent": "//iam.googleapis.com/projects/acme-prod-data-7a21/serviceAccounts/110000000000000000001",
+      "data": {
+        "keyAlgorithm": "KEY_ALG_RSA_2048",
+        "keyOrigin": "GOOGLE_PROVIDED",
+        "keyType": "USER_MANAGED",
+        "name": "projects/acme-prod-data-7a21/serviceAccounts/ci-deployer@acme-prod-data-7a21.iam.gserviceaccount.com/keys/1000000000000000000000000000000000000001",
+        "validAfterTime": "2025-06-01T09:30:00Z",
+        "validBeforeTime": "9999-12-31T23:59:59Z"
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000102",
+      "folders/200000000020",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//iam.googleapis.com/projects/acme-prod-data-7a21/serviceAccounts/110000000000000000001/keys/1000000000000000000000000000000000000002",
+    "assetType": "iam.googleapis.com/ServiceAccountKey",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://iam.googleapis.com/$discovery/rest",
+      "discoveryName": "ServiceAccountKey",
+      "parent": "//iam.googleapis.com/projects/acme-prod-data-7a21/serviceAccounts/110000000000000000001",
+      "data": {
+        "keyAlgorithm": "KEY_ALG_RSA_2048",
+        "keyOrigin": "GOOGLE_PROVIDED",
+        "keyType": "SYSTEM_MANAGED",
+        "name": "projects/acme-prod-data-7a21/serviceAccounts/ci-deployer@acme-prod-data-7a21.iam.gserviceaccount.com/keys/1000000000000000000000000000000000000002",
+        "validAfterTime": "2026-09-20T00:00:00Z",
+        "validBeforeTime": "2026-10-07T00:00:00Z"
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000102",
+      "folders/200000000020",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  },
+  {
+    "name": "//iam.googleapis.com/projects/acme-sandbox-lab-b04e/serviceAccounts/110000000000000000004/keys/1000000000000000000000000000000000000004",
+    "assetType": "iam.googleapis.com/ServiceAccountKey",
+    "resource": {
+      "version": "v1",
+      "discoveryDocumentUri": "https://iam.googleapis.com/$discovery/rest",
+      "discoveryName": "ServiceAccountKey",
+      "parent": "//iam.googleapis.com/projects/acme-sandbox-lab-b04e/serviceAccounts/110000000000000000004",
+      "data": {
+        "keyAlgorithm": "KEY_ALG_RSA_2048",
+        "keyOrigin": "USER_PROVIDED",
+        "keyType": "USER_MANAGED",
+        "name": "projects/acme-sandbox-lab-b04e/serviceAccounts/lab-tester@acme-sandbox-lab-b04e.iam.gserviceaccount.com/keys/1000000000000000000000000000000000000004",
+        "validAfterTime": "2025-01-10T12:00:00Z",
+        "validBeforeTime": "2027-01-10T12:00:00Z",
+        "disabled": true
+      },
+      "location": "global"
+    },
+    "ancestors": [
+      "projects/300000000103",
+      "folders/200000000030",
+      "organizations/100000000001"
+    ],
+    "updateTime": "2026-10-03T21:04:11.512Z"
+  }
+]

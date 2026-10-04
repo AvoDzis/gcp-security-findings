@@ -1,0 +1,33 @@
+-- One row per SCC notification, with the fields most queries need pulled out of the JSON payload.
+-- SCC sends a notification on every create and update of a matching finding, so one finding has
+-- several rows. Pick the latest per finding_name with QUALIFY (see queries/).
+-- The raw table requires a partition filter: always filter on publish_time.
+SELECT
+  publish_time,
+  message_id,
+  JSON_VALUE(data, '$.notificationConfigName') AS notification_config,
+  JSON_VALUE(data, '$.finding.name') AS finding_name,
+  JSON_VALUE(data, '$.finding.canonicalName') AS canonical_name,
+  JSON_VALUE(data, '$.finding.parent') AS source_name,
+  JSON_VALUE(data, '$.finding.parentDisplayName') AS source_display_name,
+  JSON_VALUE(data, '$.finding.category') AS category,
+  JSON_VALUE(data, '$.finding.severity') AS severity,
+  JSON_VALUE(data, '$.finding.state') AS state,
+  JSON_VALUE(data, '$.finding.mute') AS mute,
+  JSON_VALUE(data, '$.finding.findingClass') AS finding_class,
+  SAFE_CAST(JSON_VALUE(data, '$.finding.eventTime') AS TIMESTAMP) AS event_time,
+  SAFE_CAST(JSON_VALUE(data, '$.finding.createTime') AS TIMESTAMP) AS create_time,
+  JSON_VALUE(data, '$.finding.resourceName') AS resource_name,
+  JSON_VALUE(data, '$.resource.type') AS resource_type,
+  JSON_VALUE(data, '$.resource.displayName') AS resource_display_name,
+  JSON_VALUE(data, '$.resource.project') AS project_name,
+  JSON_VALUE(data, '$.resource.projectDisplayName') AS project_display_name,
+  ARRAY(
+    SELECT JSON_VALUE(folder, '$.resourceFolderDisplayName')
+    FROM UNNEST(JSON_QUERY_ARRAY(data, '$.resource.folders')) AS folder
+  ) AS folders,
+  JSON_VALUE(data, '$.finding.description') AS description,
+  JSON_VALUE(data, '$.finding.nextSteps') AS next_steps,
+  JSON_VALUE(data, '$.finding.externalUri') AS external_uri,
+  data AS payload
+FROM `${raw_table}`
