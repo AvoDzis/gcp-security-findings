@@ -1,0 +1,33 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+*.tfplan
+crash.log
+.terragrunt-cache/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets and local env
+.env
+*.pem
+*-key.json
+credentials*.json
+
+# Lab artifacts
+*.qcow2
+*.raw
+*.vmdk
+*.img
+*.tar.gz
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
